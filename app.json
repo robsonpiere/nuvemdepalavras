@@ -1,0 +1,8 @@
+{
+  "name": "nuvemdepalavras",
+  "description": "Trabalho puc minas",
+  "image": "heroku/python",
+  "repository": "https://github.com/robsonpiere/nuvemdepalavras",
+  "keywords": [],
+  "addons": []
+}
