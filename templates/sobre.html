@@ -1,0 +1,15 @@
+{% extends "shared/layout.html" %}
+{% block title %}Sobre{% endblock %}
+
+{% block content %}
+
+<h2>Nuvem de palavras</h2>
+Trabalho apresentado para matéria do curso de banco de dados não relacionais do curso de pós graduação em Ciência de dados e Big data - Puc Minas 2017
+<h3>Integrantes</h3>
+<ul>
+{% for integrante in integrantes %}
+  <li>{{ integrante }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}
