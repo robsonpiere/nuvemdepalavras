@@ -1,16 +1,33 @@
-{% extends "shared/layout.html" %}
-{% block title %}Home{% endblock %}
+<!DOCTYPE html>
+<html>
+<script src="{{url_for('static', filename='scripts/d3.v3.min.js') }}"></script>
+<script src="{{url_for('static', filename='scripts/d3.layout.cloud.js') }}"></script>
+<head>
+    <title>Exemplo de nuvem de palavra</title>
+</head>
+<style>
+    body {
+        font-family:"Lucida Grande","Droid Sans",Arial,Helvetica,sans-serif;
+    }
+    .legend {
+        border: 1px solid #555555;
+        border-radius: 5px 5px 5px 5px;
+        font-size: 0.8em;
+        margin: 10px;
+        padding: 8px;
+    }
+    .bld {
+        font-weight: bold;
+    }
+</style>
+<body>
 
-{% block content %}
-
-<div style="padding: 40px 15px;text-align: center;">
-    <h1>Olá humanos!</h1>
-    <div id="nuvem"></div>
-</div>
+</body>
 <script>
 
-    //renderizado pelo flask
-    var frequency_list = {{valores|tojson|safe}};
+
+    var frequency_list = [{'text':'Mateuzim','size':40},{'text':'Nada','size':20},{'text':'Vale','size':17},{'text':'Value=0','size':10}];
+
 
     var color = d3.scale.linear()
             .domain([0,1,2,3,4,5,6,10,15,20,100])
@@ -24,7 +41,7 @@
             .start();
 
     function draw(words) {
-        d3.select("#nuvem").append("svg")
+        d3.select("body").append("svg")
                 .attr("width", 850)
                 .attr("height", 350)
                 .attr("class", "wordcloud")
@@ -43,4 +60,7 @@
                 .text(function(d) { return d.text; });
     }
 </script>
-{% endblock %}
+
+
+
+</html>
