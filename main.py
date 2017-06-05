@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import request
 from flask import render_template
+import app.redis_database as rd
 
 app = Flask(__name__)
 
@@ -13,7 +14,6 @@ def exemplo():
 def sobre():
   integrantes = ["Mateus Fernando","Mirlaine Ribeiro","Robson Piere","Yitzhak Andrade"]
   return render_template('sobre.html',integrantes=integrantes)
-
 
 if __name__ == '__main__':
   app.run()
