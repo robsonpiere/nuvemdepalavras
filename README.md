@@ -10,6 +10,4 @@ Trabalho apresentado para matéria do curso de banco de dados não relacionais d
 
 ## links
 
-- [Azure](http://nuvemdepalavras.azurewebsites.net/)
-
-- [Heroku](https://nuvemdepalavras.herokuapp.com/)
+- [Site publicado no Heroku](https://nuvemdepalavras.herokuapp.com/)
