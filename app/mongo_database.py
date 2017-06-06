@@ -1,12 +1,17 @@
 import pymongo
 from pymongo import MongoClient
+import pprint
+from bson.objectid import ObjectId
 
 cliente = MongoClient('***REMOVED***')
 db = cliente.nuvempalavras #define database used
 
-teste = db.teste
+def salvar(termo,resultados):
+    buscas = db.buscas
+    busca = {'termo':termo,'resultados':resultados}
+    return buscas.insert_one(busca).inserted_id
 
-#teste 
-import pprint
-for item in teste.find():
-    pprint.pprint(item)
+def recuperar(identificador):
+    buscas = db.buscas
+    dados = buscas.find_one({'_id': ObjectId(identificador)})
+    return dados
