@@ -1,6 +1,8 @@
 from flask import Flask
 from flask import request
 from flask import render_template
+import app.redis_database as rd
+import app.contador as cont
 
 app = Flask(__name__)
 
@@ -13,6 +15,11 @@ def exemplo():
 def sobre():
   integrantes = ["Mateus Fernando","Mirlaine Ribeiro","Robson Piere","Yitzhak Andrade"]
   return render_template('sobre.html',integrantes=integrantes)
+
+@app.route('/busca/<termo>')
+def busca(termo=''):
+  palavras = cont.buscarTermo(termo)
+  return render_template('index.html',valores=palavras)
 
 
 if __name__ == '__main__':
