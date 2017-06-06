@@ -1,6 +1,7 @@
 import redis
 
-r = redis.StrictRedis(host='', port=0, password='')
+#substituir por variaveis de ambiente
+r = redis.StrictRedis(host='***REMOVED***', port=18605, password='***REMOVED***')
 
 def checar(termo):
     if r.exists(termo):
