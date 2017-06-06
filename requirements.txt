@@ -1,5 +1,5 @@
 Flask==0.12.1
 gunicorn==19.6.0
-redis=2.10.5
-tweepy=3.5.0
-pymongo=3.4.0
+redis
+tweepy
+pymongo
