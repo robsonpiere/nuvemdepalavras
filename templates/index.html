@@ -2,11 +2,9 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<p>Nuvem Gerada</p>
+<div id="nuvem"></div>
 
-<div style="padding: 40px 15px;text-align: center;">
-    <h1>Olá humanos!</h1>
-    <div id="nuvem"></div>
-</div>
 <script>
 
     //renderizado pelo flask
@@ -16,7 +14,7 @@
             .domain([0,1,2,3,4,5,6,10,15,20,100])
             .range(["#FF00FF", "#00BFFF", "#FF4500", "#006400", "#CD853F", "#00FA9A", "#2F4F4F", "#000000", "#FFF68F", "#3c511b", "#b43860", "#fb8e1d"]);
 
-    d3.layout.cloud().size([800, 300])
+    d3.layout.cloud().size([1500, 750])
             .words(frequency_list)
             .rotate(0)
             .fontSize(function(d) { return d.size; })
@@ -25,8 +23,8 @@
 
     function draw(words) {
         d3.select("#nuvem").append("svg")
-                .attr("width", 850)
-                .attr("height", 350)
+                .attr("width", 1024)
+                .attr("height", 500)
                 .attr("class", "wordcloud")
                 .append("g")
                 // without the transform, words words would get cutoff to the left and top, they would
@@ -35,10 +33,10 @@
                 .selectAll("text")
                 .data(words)
                 .enter().append("text")
-                .style("font-size", function(d) { return d.size + "px"; })
+                .style("font-size", function(d) { return d.size * 2 + "px"; })
                 .style("fill", function(d, i) { return color(i); })
                 .attr("transform", function(d) {
-                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate+ ")";
                 })
                 .text(function(d) { return d.text; });
     }
