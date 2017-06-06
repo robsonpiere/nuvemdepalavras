@@ -1,7 +1,6 @@
 from flask import Flask
 from flask import request
 from flask import render_template
-import app.redis_database as rd
 import app.contador as cont
 
 app = Flask(__name__)
@@ -18,7 +17,7 @@ def sobre():
 
 @app.route('/busca/<termo>')
 def busca(termo=''):
-  palavras = cont.buscarTermo(termo)
+  palavras = cont.verificar(termo)
   return render_template('index.html',valores=palavras)
 
 
