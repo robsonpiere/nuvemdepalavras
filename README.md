@@ -9,6 +9,8 @@ A busca é efetuada no twitter (100 twitts) e monta uma de palavras com os termo
  - Mirlaine Ribeiro
  - Robson Piere
  - Yitzhak Stone
+ 
+ - Professor Henrique Batista
 
 ## links
 
@@ -16,7 +18,7 @@ A busca é efetuada no twitter (100 twitts) e monta uma de palavras com os termo
 
 - [Plugin d3](https://d3js.org/)
 
-- [Plugin word cloud d3](https://github.com/jasondavies/d3-cloud)
+- [Plugin word cloud d3 - @jasondavies](https://github.com/jasondavies/d3-cloud)
 
-- [Plugin modificado](https://github.com/wvengen/d3-wordcloud)
+- [Plugin modificado(layout) por @wvengen](https://github.com/wvengen/d3-wordcloud)
 
