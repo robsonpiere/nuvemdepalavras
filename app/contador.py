@@ -30,3 +30,5 @@ def verificar(termo):
     else:
         return buscarTermo(termo)
 
+def recentes():
+    return rd.recentes()

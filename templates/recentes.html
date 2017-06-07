@@ -1,0 +1,14 @@
+{% extends "shared/layout.html" %}
+{% block title %}Sobre{% endblock %}
+
+{% block content %}
+
+<h3>Buscas recentes</h3>
+Buscas efetuadas nos últimos 60 segundos:
+<ul>
+{% for recente in recentes %}
+  <li><a href="buscar/{{ recente }}">{{ recente }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}
