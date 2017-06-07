@@ -1,9 +1,11 @@
 import pymongo
 from pymongo import MongoClient
-import pprint
+import os
 from bson.objectid import ObjectId
 
-cliente = MongoClient('***REMOVED***')
+HOST_MONGO = os.environ.get('HOST_MONGO')
+
+cliente = MongoClient(HOST_MONGO)
 db = cliente.nuvempalavras #define database used
 
 def salvar(termo,resultados):
