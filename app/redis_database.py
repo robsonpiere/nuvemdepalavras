@@ -1,7 +1,12 @@
 import redis
+import os
+
+HOST_REDIS = os.environ.get('HOST_REDIS')
+PORT_REDIS = os.environ.get('PORT_REDIS')
+PASSWORD_REDIS = os.environ.get('PASSWORD_REDIS')
 
 #substituir por variaveis de ambiente
-r = redis.StrictRedis(host='redis-18605.c14.us-east-1-3.ec2.cloud.redislabs.com', port=18605, password='balde')
+r = redis.StrictRedis(host=HOST_REDIS, port=PORT_REDIS, password=PASSWORD_REDIS,charset="utf-8", decode_responses=True)
 
 def checar(termo):
     if r.exists(termo):
@@ -10,4 +15,7 @@ def checar(termo):
         return False
 
 def salvar(termo,valor):
-    r.set(termo,valor)
+    r.set(termo,valor,ex=60)
+
+def recentes():
+    return r.keys()

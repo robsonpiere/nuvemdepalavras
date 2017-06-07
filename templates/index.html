@@ -2,11 +2,27 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<p>Nuvem Gerada</p>
-<div id="nuvem"></div>
+<h1 class='text-center'>Nuvem de Palavras</h1>
 
+<form role="form" class="form-inline" id="formulario">
+    <div class="form-group">
+        <label for="termo">Informe um termo: </label>
+            <input type="text" class="form-control" id="termo" name="termo" placeholder="exemplo: Brasil" required minlength="3">
+            <button type="submit" class="btn btn-primary">buscar</button>                        
+    </div>    
+</form>
+<h3 class='text-center col-xs-12'>Nuvem gerada</h3>
+<div id="nuvem" class="col-xs-12"></div>
 <script>
-
+    //sim fiz na view, nao me julgue eu estava com sono
+   $("#formulario").submit(function (e) {
+       e.preventDefault(); 
+       var termo = $("#termo").val();
+       console.log(termo);
+       location.href = '/buscar/'+termo;
+   });
+</script>
+<script>
     //renderizado pelo flask
     var frequency_list = {{valores|tojson|safe}};
 
@@ -14,7 +30,7 @@
             .domain([0,1,2,3,4,5,6,10,15,20,100])
             .range(["#FF00FF", "#00BFFF", "#FF4500", "#006400", "#CD853F", "#00FA9A", "#2F4F4F", "#000000", "#FFF68F", "#3c511b", "#b43860", "#fb8e1d"]);
 
-    d3.layout.cloud().size([1500, 750])
+    d3.layout.cloud().size([1024, 768])
             .words(frequency_list)
             .rotate(0)
             .fontSize(function(d) { return d.size; })
@@ -24,7 +40,7 @@
     function draw(words) {
         d3.select("#nuvem").append("svg")
                 .attr("width", 1024)
-                .attr("height", 500)
+                .attr("height", 768)
                 .attr("class", "wordcloud")
                 .append("g")
                 // without the transform, words words would get cutoff to the left and top, they would
@@ -33,7 +49,7 @@
                 .selectAll("text")
                 .data(words)
                 .enter().append("text")
-                .style("font-size", function(d) { return d.size * 2 + "px"; })
+                .style("font-size", function(d) { return Math.sqrt(d.size)* 10 + "px"; })
                 .style("fill", function(d, i) { return color(i); })
                 .attr("transform", function(d) {
                     return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate+ ")";
