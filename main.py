@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def exemplo():
-  lista = [{'text':'Mateuzim','size':40},{'text':'Nada','size':20},{'text':'Vale','size':17},{'text':'Value=0','size':10},{'text':'null','size':15},{'text':'nadinha','size':9}]
+  lista = [{'text':'Mateuzim','size':40,'repeticao':40},{'text':'Nada','size':20,'repeticao':20},{'text':'Vale','size':17,'repeticao':17},{'text':'Value=0','size':10,'repeticao':10},{'text':'null','size':15,'repeticao':15},{'text':'nadinha','size':9,'repeticao':9}]
   return render_template('index.html',valores=lista)
 
 @app.route('/sobre')
