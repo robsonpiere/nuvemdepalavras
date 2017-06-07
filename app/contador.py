@@ -16,7 +16,7 @@ def buscarTermo(termo):
     listagem = list()
 
     for item in count:
-        listagem.append({'text':item,"size":count[item]})
+        listagem.append({'text':item,"size":count[item],"repeticao":count[item]})
     id = mongo.salvar(termo,listagem)
     rd.salvar(termo,id)
     return listagem
