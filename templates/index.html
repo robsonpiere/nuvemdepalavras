@@ -2,7 +2,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1 class='text-center'>Nuvem de Palavras</h1>
+<h1 class='text-center'>Nuvem de Palavras - Twitter</h1>
 
 <form role="form" class="form-inline" id="formulario">
     <div class="form-group">
@@ -11,7 +11,7 @@
             <button type="submit" class="btn btn-primary">buscar</button>                        
     </div>    
 </form>
-<h3 class='text-center col-xs-12'>Nuvem gerada</h3>
+<h3 class='text-center col-xs-12'>Nuvem gerada para o termo: <kbd>{{termo}}</kbd></h3>
 <div id="nuvem" class="col-xs-12"></div>
 <script>
     //sim fiz na view, nao me julgue eu estava com sono
@@ -31,7 +31,7 @@
         .fill(d3.scale.ordinal().range(["#884400", "#448800", "#888800", "#444400"]))
         .words(frequency_list)
         .onwordclick(function(d, i) {
-            var htmlString = "Total de aparições da palavra <kbd>" + d.text + "</kbd> :<code>" + d.repeticao + "</code>";
+            var htmlString = "Total de aparições do termo <kbd>" + d.text + "</kbd> :<code>" + d.repeticao + "</code>";
             $("#texto-modal").html(htmlString);
             $("#myModal").modal();
         })

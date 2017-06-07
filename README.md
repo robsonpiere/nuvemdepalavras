@@ -2,6 +2,8 @@
 
 Trabalho apresentado para matéria do curso de banco de dados não relacionais do curso de pós graduação em Ciência de dados e Big data - Puc Minas 2017
 
+A busca é efetuada no twitter (100 twitts) e monta uma de palavras com os termos que aparecem na busca.
+
 ## Membros do grupo
  - Mateus Fernando
  - Mirlaine Ribeiro
