@@ -11,3 +11,10 @@ Trabalho apresentado para matéria do curso de banco de dados não relacionais d
 ## links
 
 - [Site publicado no Heroku](https://nuvemdepalavras.herokuapp.com/)
+
+- [Plugin d3](https://d3js.org/)
+
+- [Plugin word cloud d3](https://github.com/jasondavies/d3-cloud)
+
+- [Plugin modificado](https://github.com/wvengen/d3-wordcloud)
+
