@@ -15,7 +15,7 @@ def checar(termo):
         return False
 
 def salvar(termo,valor):
-    r.set(termo,valor,ex=60)
+    r.set(termo,valor,ex=300)
 
 def recentes():
     return r.keys()
