@@ -2,7 +2,7 @@
 // Algorithm due to Jonathan Feinberg, http://static.mrfeinberg.com/bv_ch03.pdf
 (function() {
   function cloud() {
-    var size = [512, 512],
+    var size = [256, 256],
         text = cloudText,
         font = cloudFont,
         fontSize = cloudFontSize,
