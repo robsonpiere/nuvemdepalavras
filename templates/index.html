@@ -27,7 +27,7 @@
     var frequency_list = {{valores|tojson|safe}};
 
     d3.wordcloud()
-        .size([1000, 600])
+        .size([800, 400])
         .fill(d3.scale.ordinal().range(["#884400", "#448800", "#888800", "#444400"]))
         .words(frequency_list)
         .onwordclick(function(d, i) {
