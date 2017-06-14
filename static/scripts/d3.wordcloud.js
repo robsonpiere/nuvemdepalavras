@@ -1,6 +1,7 @@
 // easy d3-based word cloud plugin https://github.com/wvengen/d3-wordcloud
 // requires https://github.com/jasondavies/d3-cloud
 // based on https://github.com/shprink/d3js-wordcloud
+// modificado seletor padrão para #nuvem por robsonpiere
 (function() {
   function wordcloud() {
     var selector = '#nuvem',
