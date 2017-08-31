@@ -4,6 +4,8 @@ Trabalho apresentado para matéria do curso de banco de dados não relacionais d
 
 A busca é efetuada no [Twitter](https://twitter.com/) (100 twitts) e monta uma de palavras com os termos que aparecem na busca.  :shipit:  :mag:
 
+Exemplo no Azure [http://nuvemdepalavras.azurewebsites.net](http://nuvemdepalavras.azurewebsites.net)
+
 Exemplo no Heroku [https://nuvemdepalavras.herokuapp.com/](https://nuvemdepalavras.herokuapp.com/)
 
 ## Membros do grupo
