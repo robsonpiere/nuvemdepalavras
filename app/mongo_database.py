@@ -10,9 +10,9 @@ HOST_MONGO = os.environ.get('HOST_MONGO')
 cliente = MongoClient(HOST_MONGO)
 db = cliente.nuvempalavras #define database used
 
-def salvar(termo,resultados):
+def salvar(termo,resultados,sentimento):
     buscas = db.buscas
-    busca = {'termo':termo,'resultados':resultados,'createdAt':datetime.datetime.utcnow()}
+    busca = {'termo':termo,'resultados':resultados,'sentimento':sentimento, 'createdAt':datetime.datetime.utcnow()}
     return buscas.insert_one(busca).inserted_id
 
 def recuperar(identificador):

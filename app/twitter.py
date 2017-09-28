@@ -11,5 +11,5 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
 def buscar(termo):
     api = tweepy.API(auth)
-    results = api.search(q=termo,lang='pt-br',count=100)
+    results = api.search(q=termo,lang='en-us',count=100)
     return results
