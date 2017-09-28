@@ -1,20 +1,18 @@
-# :cloud: Nuvem de palavras  :cloud:
+# :cloud: Nuvem de palavras e analise de sentimento :cloud:
 
-Trabalho apresentado para matéria do curso de banco de dados não relacionais do curso de pós graduação em Ciência de dados e Big data - Puc Minas 2017
+Trabalho apresentado para matéria de recuperação da informação do curso de pós graduação em Ciência de dados e Big data - Puc Minas 2017
 
-A busca é efetuada no [Twitter](https://twitter.com/) (100 twitts) e monta uma de palavras com os termos que aparecem na busca.  :shipit:  :mag:
+A busca é efetuada no [Twitter](https://twitter.com/) (10 twitts) e monta uma de palavras com os termos que aparecem na busca.  :shipit:  :mag:
 
 Exemplo no Azure [http://nuvemdepalavras.azurewebsites.net](http://nuvemdepalavras.azurewebsites.net)
 
 Exemplo no Heroku [https://nuvemdepalavras.herokuapp.com/](https://nuvemdepalavras.herokuapp.com/)
 
-## Membros do grupo
- - Mateus Fernando [@mfpinheiro](https://github.com/mfpinheiro)
- - Mirlaine Ribeiro [@Mirlaine](https://github.com/Mirlaine)
- - Robson Piere [@robsonpiere](https://github.com/robsonpiere/)
- - Yitzhak Andrade[@YitzhakAndrade](https://github.com/YitzhakAndrade)
+## Nomes
+ - Aluno[@robsonpiere](https://github.com/robsonpiere/)
+
  
- - Professor Henrique Batista
+ - Professor Cristiano
 
 ## links
 
@@ -62,4 +60,3 @@ Exemplo no Heroku [https://nuvemdepalavras.herokuapp.com/](https://nuvemdepalavr
 #Na pasta raiz do projeto:
 python main.py
 ``` 
-
