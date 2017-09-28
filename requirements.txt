@@ -3,3 +3,5 @@ gunicorn==19.6.0
 redis
 tweepy
 pymongo
+textblob
+numpy
