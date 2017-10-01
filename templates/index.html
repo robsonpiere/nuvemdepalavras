@@ -22,8 +22,7 @@
     
     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <p>Polaridade > 0: <span class="bons"></span></p>
-            <p>Polaridade < 0: <span class="ruins"></span></p>
-            <p>Média: <span class="media"></span></p>  
+            <p>Polaridade < 0: <span class="ruins"></span></p> 
     </div> 
     <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="barras"></div>
 </div>
@@ -57,7 +56,6 @@
     var sentimento = {{sentimento|tojson|safe}};
     document.querySelector(".bons").innerHTML = sentimento[0].bons;
     document.querySelector(".ruins").innerHTML = sentimento[0].ruins;
-    document.querySelector(".media").innerHTML = sentimento[0].media;
 
     var dados = [sentimento[0].bons, sentimento[0].ruins];
     var grafico = d3.select("#barras").append("div").attr("class", "grafico");
