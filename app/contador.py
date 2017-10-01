@@ -32,7 +32,8 @@ def buscarTermo(termo):
         listagem.append({'text':item,"size":count[item],"repeticao":count[item]})
     id = mongo.salvar(termo,listagem,sentimento)
     rd.salvar(termo,id)
-    return listagem
+    retorno = {'resultados':listagem,'sentimento':sentimento}
+    return retorno
 
 def verificar(termo):
     id = rd.checar(termo)

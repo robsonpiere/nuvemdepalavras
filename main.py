@@ -23,11 +23,14 @@ def recentes():
 
 @app.route('/buscar/<termo>',methods=['GET', 'POST'])
 def busca(termo=''):
-  busca = cont.verificar(termo)
-  palavras = busca['resultados']
-  sentimento = busca['sentimento']
-  return render_template('index.html',valores=palavras,termo=termo,sentimento=sentimento)
-
+  try:
+    busca = cont.verificar(termo)
+    print(busca)
+    palavras = busca['resultados']
+    sentimento = busca['sentimento']
+    return render_template('index.html',valores=palavras,termo=termo,sentimento=sentimento)
+  except:
+      return "Ocorreu um erro :("
 
 if __name__ == '__main__':
   app.run()
