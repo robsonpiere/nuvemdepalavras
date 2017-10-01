@@ -39,7 +39,7 @@ def verificar(termo):
     print(id)
     if(id):
         dados = mongo.recuperar(id)
-        return dados['resultados']
+        return dados
     else:
         return buscarTermo(termo)
 

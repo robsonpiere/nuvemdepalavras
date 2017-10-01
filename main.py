@@ -7,12 +7,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def exemplo():
-  lista = [{'text':'Mateuzim','size':40,'repeticao':40},{'text':'Nada','size':20,'repeticao':20},{'text':'Vale','size':17,'repeticao':17},{'text':'Value=0','size':10,'repeticao':10},{'text':'null','size':15,'repeticao':15},{'text':'nadinha','size':9,'repeticao':9}]
-  return render_template('index.html',valores=lista,termo="Mateuzim")
+  lista = [{'text':'Palavras','size':40,'repeticao':40},{'text':'Sentimento','size':20,'repeticao':20},{'text':'Nuvem','size':17,'repeticao':17},{'text':'Recuperação','size':10,'repeticao':10},{'text':'Informação','size':15,'repeticao':15},{'text':'twitter','size':9,'repeticao':9}]
+  sentimento = [{'bons':50,'ruins':50,'media':0.15}]
+  return render_template('index.html',valores=lista,termo="Palavras",sentimento=sentimento)
 
 @app.route('/sobre')
 def sobre():
-  integrantes = ["Mateus Fernando","Mirlaine Ribeiro","Robson Piere","Yitzhak Andrade"]
+  integrantes = ["Robson Piere"]
   return render_template('sobre.html',integrantes=integrantes)
 
 @app.route('/recentes')
@@ -22,8 +23,11 @@ def recentes():
 
 @app.route('/buscar/<termo>',methods=['GET', 'POST'])
 def busca(termo=''):
-  palavras = cont.verificar(termo)
-  return render_template('index.html',valores=palavras,termo=termo)
+  busca = cont.verificar(termo)
+  palavras = busca['resultados']
+  sentimento = busca['sentimento']
+  print(sentimento)
+  return render_template('index.html',valores=palavras,termo=termo,sentimento=sentimento)
 
 
 if __name__ == '__main__':

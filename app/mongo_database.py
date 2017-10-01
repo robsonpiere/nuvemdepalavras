@@ -4,7 +4,6 @@ import os
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-
 HOST_MONGO = os.environ.get('HOST_MONGO')
 
 cliente = MongoClient(HOST_MONGO)

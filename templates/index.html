@@ -6,13 +6,27 @@
 
 <form role="form" class="form-inline" id="formulario">
     <div class="form-group">
-        <label for="termo">Informe um termo: </label>
-            <input type="text" class="form-control" id="termo" name="termo" placeholder="exemplo: Brasil" required minlength="3">
+        <label for="termo">Informe um termo:(inglês) </label>
+            <input type="text" class="form-control" id="termo" name="termo" placeholder="exemplo: Korea" required minlength="3">
             <button type="submit" class="btn btn-primary">buscar</button>                        
     </div>    
 </form>
-<h3 class='text-center col-xs-12'>Nuvem gerada para o termo: <kbd>{{termo}}</kbd></h3>
-<div id="nuvem" class="col-xs-12"></div>
+
+<div class="row">
+    <h3 class='text-center col-xs-12'>Nuvem gerada para o termo: <kbd>{{termo}}</kbd></h3>
+    <div id="nuvem" class="col-xs-12"></div>
+</div>
+
+<div class="row">
+    <h3 class='text-center col-xs-12'>Quantidade de twitts:</h3>
+    
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <p>Polaridade > 0: <span class="bons"></span></p>
+            <p>Polaridade < 0: <span class="ruins"></span></p>
+            <p>Média: <span class="media"></span></p>  
+    </div> 
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="barras"></div>
+</div>
 <script>
     //sim fiz na view, nao me julgue eu estava com sono
    $("#formulario").submit(function (e) {
@@ -37,6 +51,23 @@
         })
         .start();
 </script>
+
+
+<script>
+    var sentimento = {{sentimento|tojson|safe}};
+    document.querySelector(".bons").innerHTML = sentimento[0].bons;
+    document.querySelector(".ruins").innerHTML = sentimento[0].ruins;
+    document.querySelector(".media").innerHTML = sentimento[0].media;
+
+    var dados = [sentimento[0].bons, sentimento[0].ruins];
+    var grafico = d3.select("#barras").append("div").attr("class", "grafico");
+    grafico.selectAll("div")
+    .data(dados)
+    .enter().append("div")
+    .style("width", function(d) { return d * 10 + "px"; })
+    .text(function(d) { return d; })
+</script>
+
 <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">

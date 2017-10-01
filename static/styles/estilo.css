@@ -1,0 +1,8 @@
+.grafico div {
+    font: 11px sans-serif;
+    background-color: #082DE8;
+    text-align: right;
+    padding: 5px;
+    margin: 2px;
+    color: white;
+}
