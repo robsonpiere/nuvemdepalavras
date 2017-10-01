@@ -3,6 +3,6 @@
   "description": "Trabalho puc minas",
   "image": "heroku/python",
   "repository": "https://github.com/robsonpiere/nuvemdepalavras",
-  "keywords": [],
+  "keywords": ["python","wordcloud","sentiment"],
   "addons": []
 }
