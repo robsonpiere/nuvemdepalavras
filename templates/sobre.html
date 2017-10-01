@@ -5,16 +5,18 @@
 
 <h2>Nuvem de palavras V1.0.0</h2>
 
-<p>Trabalho apresentado para matéria do curso de banco de dados não relacionais do curso de pós graduação em Ciência de dados e Big data - Puc Minas 2017</p>
+<p>Trabalho apresentado para matéria do curso de recuperação da informação de pós graduação em Ciência de dados e Big data - Puc Minas 2017</p>
 
-<p>A busca é efetuada no twitter (100 twitts) e monta uma de palavras com os termos que aparecem na busca.</p>
-<h3>Integrantes</h3>
+<p>A busca é efetuada no twitter (100 twitts) e monta uma de palavras com os termos que aparecem na busca.
+</p>
+<p>Após a montagem da nuvem de palavras é utilizada a biblioteca textblob para efetuar uma análise dos sentimentos dos twiites (ingles) </p>
+<h3>Aluno</h3>
 <ul>
 {% for integrante in integrantes %}
   <li>{{ integrante }}</a></li>
 {% endfor %}
 </ul>
 <ul>
-  <li>Professor: Henrique Batista </a></li>
+  <li>Professor: Cristiano Carvalho </a></li>
 </ul>
 {% endblock %}
