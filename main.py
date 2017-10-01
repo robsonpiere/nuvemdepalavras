@@ -26,7 +26,6 @@ def busca(termo=''):
   busca = cont.verificar(termo)
   palavras = busca['resultados']
   sentimento = busca['sentimento']
-  print(sentimento)
   return render_template('index.html',valores=palavras,termo=termo,sentimento=sentimento)
 
 
