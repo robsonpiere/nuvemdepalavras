@@ -1,5 +1,7 @@
 # :cloud: Nuvem de palavras e analise de sentimento :cloud:
 
+> ATENÇÃO: Projeto em atualização.
+
 Trabalho apresentado para matéria de recuperação da informação do curso de pós graduação em Ciência de dados e Big data - Puc Minas 2017
 
 A busca é efetuada no [Twitter](https://twitter.com/) (100 twitts) e monta uma de palavras com os termos que aparecem na busca.  :shipit:  :mag:
